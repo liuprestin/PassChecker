@@ -1,0 +1,18 @@
+# PassChecker
+
+A small cmdline script to check your passwords against (currently)
+https://haveibeenpwned.com databases
+
+# How to use:
+
+python ./pwd-check.py
+
+(subject to change)
+
+# TODO
+- use other databases with other disclosures and switch the haveibeenpwned API as well
+- have a script to wipe the console history (as inputting the password would )
+- a gui? 
+
+### Credits where due
+Originally based on the Work from Andrei Neagoie in ZTM python course

@@ -1,12 +1,10 @@
-import requests 
+import requests
 import hashlib
 import sys
-# password  checker via web API 
+# password  checker via web API
 # password needs to be hashed in SHA1
 # k-animinity: first 5 chacacters of the hash - for security reasons
 
-# todo: read passwords from a file or a gui - since the command line leaves a history of commands...
-# GUI? 
 
 def request_api_data(query_char):
     url = 'https://api.pwnedpasswords.com/range/' + query_char
@@ -36,7 +34,7 @@ def main(args):
     for password in args:
         count = pwned_api_check(password)
         if count:
-            print(f'{password} was found {count} times... maybe change password?')
+            print(f'{password} was found {count} times... maybe change password? Checkout https://www.microsoft.com/en-us/microsoft-365-life-hacks/privacy-and-safety/keep-your-passwords-safe-with-these-tips')
         else:
             print(f'{password} not found - carry on')
 
