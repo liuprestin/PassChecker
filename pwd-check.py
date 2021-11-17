@@ -25,8 +25,8 @@ def read_res(response):
     print(response.text)
 
 def pwned_api_check(password):
-    sha1password = hashlib.sha1(password.encode('utf-8')).hexdigest().upper() # refer to hashlib docs for details , need to encode to utf-8, hexdigest to change to string
-    first5_char, tail = sha1password[:5], sha1password[5:]
+    sha1pwd = hashlib.sha1(password.encode('utf-8')).hexdigest().upper() # refer to hashlib docs for details , need to encode to utf-8, hexdigest to change to string
+    first5_char, tail = sha1pwd[:5], sha1pwd[5:]
     response = request_api_data(first5_char)
     return get_password_leaks_count(response, tail)
 
@@ -34,9 +34,9 @@ def main(args):
     for password in args:
         count = pwned_api_check(password)
         if count:
-            print(f'{password} was found {count} times... maybe change password? Checkout https://www.microsoft.com/en-us/microsoft-365-life-hacks/privacy-and-safety/keep-your-passwords-safe-with-these-tips')
+            print(f'{password} was found {count} times... maybe change password? \n \n Checkout https://www.microsoft.com/en-us/microsoft-365-life-hacks/privacy-and-safety/keep-your-passwords-safe-with-these-tips')
         else:
             print(f'{password} not found - carry on')
 
-if __name == '__main__':
+if __name__ == '__main__':
     sys.exit(main(sys.argv[1:]))

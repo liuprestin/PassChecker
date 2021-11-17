@@ -12,7 +12,11 @@ python ./pwd-check.py
 # TODO
 - use other databases with other disclosures and switch the haveibeenpwned API as well
 - have a script to wipe the console history (as inputting the password would )
-- a gui? 
+- a gui?
+
+Migrate to v3 of api
+https://haveibeenpwned.com/API/v3
+
 
 ### Credits where due
 Originally based on the Work from Andrei Neagoie in ZTM python course
